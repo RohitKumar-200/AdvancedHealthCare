@@ -1,175 +1,151 @@
-import React from "react";
-import UserAvatar from "../UserAvatar/UserAvatar";
+import React, { useState, useContext } from "react";
 import "./Home.css";
+import { UserContext } from "../../Context/userContext";
+import TextField from "@material-ui/core/TextField";
+import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
+import { Button } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Avatar } from "@material-ui/core";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import ChatIcon from "@material-ui/icons/Chat";
+import SendIcon from "@material-ui/icons/Send";
 
 function Home() {
-  var showComment = () => {
-    var x = document.getElementById("view_comments").style.display;
-    if (x === "") {
-      document.getElementById("view_comments").style.display = "grid";
-    } else {
-      document.getElementById("view_comments").style.display = "";
+  const [user] = useContext(UserContext);
+  const [newPostTitle, setNewPostTitle] = useState("");
+  const [newPostMessage, setNewPostMessage] = useState("");
+  const [newPostImage, setNewPostImage] = useState(null);
+  const [newComment, setNewComment] = useState("");
+  const [viewComments, setViewComments] = useState(false);
+
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#32A899",
+      },
+      secondary: {
+        main: "#31D570",
+      },
+    },
+  });
+
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setNewPostImage(e.target.files[0]);
     }
   };
+
+  const handlePostSubmit = () => {
+    if (newPostTitle === "" || newPostMessage === "" || newPostImage === null)
+      alert("Post cannot be empty");
+  };
+
+  const toggleViewComments = () => {
+    setViewComments(!viewComments);
+  };
+
   return (
-    <div className="home">
-      {/* <!-- Page Container --> */}
-      <div className="w3-container w3-content">
-        {/* <!-- The Grid --> */}
-        <div className="w3-row">
-          {/* <!-- Middle Column --> */}
-          <div className="w3-col m12">
-            {/* write or post box */}
-            <div className="w3-row-padding">
-              <div className="w3-col m12">
-                <div className="w3-card w3-round w3-white">
-                  <div className="w3-container w3-padding post__container">
-                    <h1 className="post_feed_head">Your Thoughts ?</h1>
-                    <form action="post">
-                      <input
-                        type="text"
-                        name="name"
-                        className="question"
-                        Id="nme"
-                        required
-                        autocomplete="off"
-                      />
-                      <label htmlFor="nme">
-                        <span className="question__text">Post Title</span>
-                      </label>
-                      <textarea
-                        name="message"
-                        rows="2"
-                        className="question"
-                        id="msg"
-                        required
-                        autocomplete="off"
-                      ></textarea>
-                      <label htmlFor="msg">
-                        <span className="question_text">
-                          What's your message?
-                        </span>
-                      </label>
-                      <br />
-                      <button type="file" className="w3-button w3-theme">
-                        <i class="fa fa-photo" /> Add Media
-                      </button>
-                      <button type="submit" className="w3-button w3-theme">
-                        <i className="fa fa-pencil"></i>  Post
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* user post feed */}
-            <div className="w3-container w3-card w3-white w3-round w3-margin">
-              <br />
-              {/* user avatar */}
-              <span className="w3-left w3-circle w3-margin-right user-avatar">
-                <UserAvatar />
-              </span>
-              {/* time of post */}
-              <span className="w3-right w3-opacity">1 min</span>
-              {/* user name */}
-              <h4>RohiT Bhadwa</h4>
-              <br />
-              {/* post title */}
-              <h1>Nothern Lights</h1>
-              <hr className="w3-clear" />
-              {/* post body */}
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-              </p>
-              <br />
-
-              {/* Media Uploaded Area */}
-              <div className="w3-row-padding" style={{margin: `0px -16px`}}>
-                <div className="w3-full">
-                  <img
-                    src="https://www.w3schools.com/w3images/lights.jpg"
-                    width="100%"
-                    alt="Northern Lights"
-                    className="w3-margin-bottom"
-                  />
-                </div>
-              </div>
-
-              {/* Like button */}
-              <button
-                type="button"
-                className="w3-button w3-theme-d1 w3-margin-bottom like__button"
-              >
-                <i className="fa fa-thumbs-up"></i>
-              </button>
-
-              {"  "}
-              {/* view comment button */}
-              <button
-                type="button"
-                className="w3-button w3-theme-d2 w3-margin-bottom comment__button"
-                onClick={showComment}
-              >
-                <i className="fa fa-comment"></i>  View Comments
-              </button>
-
-              {/* comment-section */}
-              <div class="comment__content">
-                <div className="comment__avatar">
-                  <UserAvatar />
-                </div>
-                <div className="comment_body">
-                  <input type="text" placeholder="Write Your Comment" />
-                </div>
-                <div className="comment_send" title="send">
-                  <i class="fa fa-send"></i>
-                </div>
-              </div>
-
-              <div className="view__comments" id="view_comments">
-                {/* A sample comment */}
-                <div className="user__comment">
-                  <div className="view__comment__avatar">
-                    <UserAvatar />
-                  </div>
-                  <div className="view__comment__body">
-                    <p> What a post wow . very nice post. so good post!</p>
-                  </div>
-                </div>
-                <hr className="w3-clear" />
-
-                {/* A sample comment */}
-                <div className="user__comment">
-                  <div className="view__comment__avatar">
-                    <UserAvatar />
-                  </div>
-                  <div className="view__comment__body">
-                    <p> What a post wow . very nice post. so good post!</p>
-                  </div>
-                </div>
-                <hr className="w3-clear" />
-              </div>
-            </div>
-
-            {/* <!-- End Middle Column --> */}
+    <ThemeProvider theme={theme}>
+      <div className="home">
+        <div className="home__newPostContainer">
+          <h2 className="home__heading">Your Thoughts ?</h2>
+          <TextField
+            type="text"
+            value={newPostTitle}
+            onChange={(e) => {
+              setNewPostTitle(e.target.value);
+            }}
+            label="Post title"
+            required
+          />
+          <TextField
+            type="text"
+            value={newPostMessage}
+            onChange={(e) => setNewPostMessage(e.target.value)}
+            label="What's your message?"
+            className="home__postTextField"
+            required
+          />
+          <div className="home__newPostImageContainer">
+            <label for="newPostImage" className="home__newPostImage">
+              <AddAPhotoIcon />
+            </label>
+            <input id="newPostImage" type="file" onChange={handleImageChange} />
+            <p className="home__newPostImageName">{newPostImage?.name}</p>
           </div>
-
-          {/* <!-- End Grid --> */}
+          <div className="home__newPostButton">
+            <Button onClick={handlePostSubmit}>Post</Button>
+          </div>
         </div>
-
-        {/* <!-- End Page Container --> */}
+        <div className="home__postContainer">
+          <div className="home__postHeader">
+            <div className="home__postUserDetails">
+              <Avatar /> <p>Abhishek Singh</p>
+            </div>
+            <div className="home__postDate">1 min</div>
+          </div>
+          <h2 className="home__postHeading">Nothern Lights</h2>
+          <p className="home__postMessage">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          </p>
+          <div className="home__postImgContainer">
+            <img
+              src="https://www.w3schools.com/w3images/lights.jpg"
+              alt="northern lights"
+            />
+          </div>
+          <div className="home__postResponse">
+            <div className="home__postLikes">
+              {/* <span style={{ color: "#00ff00" }}> */}
+              <ThumbUpIcon />
+              {/* </span> */}
+              <span>23 Likes</span>
+            </div>
+            <div
+              className="home__viewCommentButton"
+              onClick={toggleViewComments}
+            >
+              <ChatIcon />
+              <span>View comments</span>
+            </div>
+          </div>
+          <div className="home__newCommentContainer">
+            <Avatar src={user?.pic} />
+            <div className="home__newCommentbox">
+              <input
+                type="text"
+                placeholder="Write Your Comment"
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                className="home__newCommentboxInput"
+              />
+              <SendIcon />
+            </div>
+          </div>
+          {viewComments ? (
+            <div className="home__commentContainer">
+              <div className="home__postComment">
+                <Avatar />{" "}
+                <p>What a post wow . very nice post. so good post!</p>
+              </div>
+              <div className="home__postComment">
+                <Avatar />{" "}
+                <p>What a post wow . very nice post. so good post!</p>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
 export default Home;
-
