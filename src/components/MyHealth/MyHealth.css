@@ -1,0 +1,130 @@
+.header {
+  height: 60px;
+  padding: 0 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(50, 168, 153);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 5px 20px -15px #000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.header__left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__logoContainer {
+  height: 35px;
+  padding: 5px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff10;
+  box-shadow: 0 0 5px -4px #000;
+}
+.header__logoContainer img {
+  max-height: 100%;
+}
+
+.header__sideNav {
+  display: none;
+}
+.header__menuIcon {
+  display: none;
+}
+
+.header__navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.header__navList li {
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+.header__navList li:hover {
+  transition: 0.1s;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.header__navList .active {
+  border-bottom: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px 0px 5px 0px;
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+}
+.header__userDetails {
+  margin-right: 10px;
+  font-size: 12px;
+  color: #ffffffea;
+}
+.header__userName {
+  font-size: 14px;
+}
+.header__userAvatar {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 888px) {
+  .header__nav {
+    display: none;
+  }
+  .header__menuIcon {
+    display: flex;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .header__menuIcon .MuiSvgIcon-root {
+    color: #ffffff;
+    font-size: 30px;
+  }
+  .header__sideNav {
+    margin-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #32a899;
+    height: 100vh;
+    width: 200px;
+    display: block;
+    align-items: center;
+    margin-left: -200px;
+    transition: 0.5s;
+  }
+  .header__sideNavActive {
+    margin-left: 0;
+  }
+  .header__sideNavList {
+    list-style-type: none;
+    height: 100vh;
+  }
+  .header__sideNavList li {
+    background-color: #52b3a6;
+    color: #ffffff;
+    padding-left: 20px;
+    margin-bottom: 2px;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .header__sideNavList li:hover {
+    background-color: rgb(130, 240, 130);
+  }
+}

@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+* {
+  box-sizing: border-box;
+}
+
+.app__body {
+  background-color: #f4f5f6;
+  height: calc(100vh - 60px);
+  overflow: auto;
+  margin-top: 60px;
+}
+.app__body::-webkit-scrollbar {
+  width: 4px;
+}
+.app__body::-webkit-scrollbar-track {
+  background: #b9b9b9;
+}
+.app__body::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #5ca5ac;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
