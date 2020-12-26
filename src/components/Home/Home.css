@@ -1,0 +1,197 @@
+.home {
+  margin: 0 auto 20px;
+  width: 96%;
+  max-width: 900px;
+  font-family: "Open Sans", sans-serif;
+}
+.home__heading {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home__newPostContainer {
+  margin-top: 20px;
+  padding: 0 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px -5px #00000050;
+}
+.home__newPostContainer .MuiTextField-root {
+  width: 400px !important;
+}
+
+.home__newPostImageContainer {
+  display: flex;
+  align-items: center;
+}
+.home__newPostImageName {
+  margin-left: 10px;
+  font-size: small;
+  color: grey;
+}
+.home__newPostImageContainer {
+  margin: 5px 0;
+}
+.home__newPostImageContainer input {
+  display: none;
+}
+.home__newPostImageContainer .MuiSvgIcon-root {
+  color: #6e7785 !important;
+  cursor: pointer;
+}
+.home__newPostButton .MuiButton-root {
+  background-color: #31d570 !important;
+  color: #ffffff !important;
+  width: 100px !important;
+}
+
+.home__postContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px -5px #00000050;
+}
+
+.home__postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home__postUserDetails {
+  display: flex;
+  align-items: center;
+}
+.home__postUserDetails p {
+  margin-left: 10px;
+}
+.home__postDate {
+  color: gray;
+}
+.home__postHeading {
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 60px;
+  border-bottom: 1px solid #00000010;
+}
+.home__postMessage {
+  padding: 10px 0;
+}
+.home__postImgContainer {
+  width: 100%;
+  margin-top: 5px;
+}
+.home__postImgContainer > img {
+  width: 100%;
+}
+.home__postResponse {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.home__postLikes {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #50c0b2;
+  cursor: pointer;
+}
+.home__postLikes > span {
+  margin-left: 5px;
+}
+.home__viewCommentButton {
+  margin-left: 20px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #50c0b2;
+  cursor: pointer;
+}
+.home__viewCommentButton > span {
+  margin-left: 5px;
+}
+.home__newCommentContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.home__newCommentbox {
+  margin-left: 10px;
+  border: 1px solid #32a899;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.home__newCommentboxInput {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  width: 200px;
+  border-radius: inherit;
+  font-size: 16px;
+  transition-duration: 0.5s;
+}
+.home__newCommentboxInput:focus {
+  width: 300px;
+}
+.home__newCommentbox .MuiSvgIcon-root {
+  margin: 0 5px;
+  color: #32a899;
+  cursor: pointer;
+}
+.home__commentContainer {
+  margin-top: 20px;
+  border: 1px solid #00000030;
+  border-bottom: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.home__postComment {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00000030;
+}
+.home__postComment > p {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .home__heading {
+    font-size: 25px;
+  }
+  .home__newPostContainer {
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+  .home__postContainer {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .home__postHeading {
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .home__newPostContainer .MuiTextField-root {
+    width: 100% !important;
+  }
+  .home__newCommentbox {
+    width: 100%;
+  }
+  .home__newCommentboxInput {
+    width: 100%;
+  }
+  .home__newCommentboxInput:focus {
+    width: 100%;
+  }
+}
