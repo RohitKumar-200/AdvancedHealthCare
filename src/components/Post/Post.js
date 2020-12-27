@@ -6,7 +6,6 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatIcon from "@material-ui/icons/Chat";
 import SendIcon from "@material-ui/icons/Send";
 import { db } from "../../firebase";
-import firebase from "firebase";
 
 function Post({
   id,
@@ -23,14 +22,7 @@ function Post({
   const [user] = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
   const [viewComments, setViewComments] = useState(false);
-  const [postLiked, setPostLiked] = useState(likes.includes(user.email));
-
-  useEffect(() => {
-    // const date = new Date(timestamp.seconds);
-    // const date2 = new Date(timestamp.nanoseconds);
-    // console.log(date, date2);
-    console.log(timestamp.toDate().toUTCString());
-  }, []);
+  const [postLiked, setPostLiked] = useState(likes.includes(user?.email));
 
   useEffect(() => {
     comments.sort((a, b) => {
@@ -43,7 +35,10 @@ function Post({
   };
 
   const handlePostLike = () => {
-    if (!user) alert("please Login to continue !");
+    if (!user) {
+      alert("please Login to continue !");
+      return;
+    }
     if (!postLiked) {
       setPostLiked(true);
       db.collection("posts")
@@ -67,7 +62,10 @@ function Post({
   };
 
   const handleNewComment = () => {
-    if (!user) alert("please Login to continue !");
+    if (!user) {
+      alert("please Login to continue !");
+      return;
+    }
     setNewComment("");
     db.collection("posts")
       .doc(id)
@@ -106,13 +104,7 @@ function Post({
             className={`post__likes ${postLiked ? "active" : ""}`}
             onClick={handlePostLike}
           >
-            {postLiked ? (
-              //   <p style={{ color: "rgb(0 90 255)" }}>
-              <ThumbUpIcon />
-            ) : (
-              //   </p>
-              <ThumbUpIcon />
-            )}
+            <ThumbUpIcon />
             <span>{likes.length} Likes</span>
           </div>
           <div className="post__viewCommentButton" onClick={toggleViewComments}>

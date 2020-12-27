@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router-dom";
+import { UserContext } from "../../Context/userContext";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
@@ -17,6 +18,8 @@ import Covid from "../Covid/Covid";
 import Chatbot from "../Chatbot/Chatbot";
 
 function App() {
+  const [user] = useContext(UserContext);
+
   return (
     <div className="app">
       <Router>
@@ -55,7 +58,7 @@ function App() {
               <Covid />
             </Route>
             <Route path="/">
-              {true ? <Redirect to="/home" /> : <Redirect to="/login" />}
+              {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
             </Route>
           </Switch>
           <Footer />
