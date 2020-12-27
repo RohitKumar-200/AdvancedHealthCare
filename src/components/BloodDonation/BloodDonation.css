@@ -1,0 +1,267 @@
+.bloodDonation {
+  background-color: rgb(161, 243, 243);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Main container */
+.blood_Donation_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+.left__col_leader-board {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.leaderboard__top {
+  height: 45%;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px;
+}
+.first_leader {
+  height: 300px;
+  padding: 5px;
+  width: 25%;
+  background-color: rgba(68, 58, 57, 0.5);
+  transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  transition: 0.5s ease;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.leader_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.leader_detail > .MuiAvatar-root {
+  height: 80px;
+  width: 80px;
+}
+.leader_detail p {
+  font-weight: bolder;
+  text-align: center;
+}
+.leader_image_box {
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first_leader:hover {
+  transform: perspective(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.second_leader {
+  height: 320px;
+  padding: 5px;
+  width: 27%;
+  background-color: rgba(255, 230, 1, 0.6);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  transition: 0.5s ease;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.second_leader:hover {
+  transform: perspective(3em) scale(1.08);
+}
+.third_leader {
+  height: 300px;
+  padding: 5px;
+  width: 25%;
+  background-color: rgba(153, 90, 17, 0.65);
+  transform: perspective(3em) rotateX(0deg) rotateY(1.175deg) rotateZ(-1deg);
+  box-shadow: 0px 5px 10px rgb(0, 0, 0);
+  transition: 0.5s ease;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.third_leader:hover {
+  transform: perspective(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.leaderboard__bottom {
+  height: 55%;
+  width: 100%;
+  overflow: auto;
+  padding: 5px;
+}
+.leaderboard__bottom::-webkit-scrollbar {
+  width: 4px;
+}
+.leaderboard__bottom::-webkit-scrollbar-track {
+  background: #b9b9b9;
+}
+.leaderboard__bottom::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #5ca5ac;
+}
+.first_runnerup_leader,
+.second_runnerup_leader,
+.normal_leader {
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 25%;
+  width: 98%;
+  padding: 5px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(230, 2, 68, 1) 88%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  margin: 5px;
+}
+.leader_image_box_bottom {
+  height: 50%;
+  width: 5%;
+  padding: 5px 2px;
+}
+.leader_detail__bottom {
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  font-weight: bolder;
+}
+.right_col_form-map {
+  width: 35%;
+  margin: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.donate__blood_form {
+  width: 100%;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 35px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.donate__blood_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30%;
+  width: 100%;
+}
+.donate__blood_form_feilds {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: auto auto;
+  height: 60%;
+  width: 100%;
+}
+.donation__center__box {
+  width: 100%;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  height: 200px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 35px;
+}
+
+@media only screen and (max-width: 800px) {
+  .bloodDonation {
+    font-size: 0.8em;
+  }
+  .leaderboard__top {
+    padding: 5px;
+    justify-content: space-between;
+  }
+  .leader_image_box_bottom > img {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .blood_Donation_container {
+    flex-direction: column;
+  }
+  .leaderboard__top {
+    width: 100vw;
+  }
+  .left__col_leader-board {
+    width: 100vw;
+  }
+  .first_leader,
+  .second_leader,
+  .third_leader {
+    width: 30%;
+    margin: 10px;
+  }
+  .leaderboard__bottom {
+    width: 100vw;
+  }
+  .right_col_form-map {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .leader_detail p {
+    font-size: 0.8em;
+  }
+  .leader_detail > .MuiAvatar-root {
+    height: 30px;
+    width: 30px;
+  }
+  .first_leader,
+  .second_leader,
+  .third_leader {
+    height: 200px;
+  }
+  .leader_image_box > img {
+    height: 50px;
+    width: 50px;
+  }
+  .leader_image_box_bottom > img {
+    height: 15px;
+    width: 15px;
+  }
+  .leader_detail__bottom {
+    font-size: 0.8em;
+  }
+}
