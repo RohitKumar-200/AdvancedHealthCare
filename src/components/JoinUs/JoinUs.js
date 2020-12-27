@@ -62,6 +62,7 @@ function JoinUs() {
             gender,
             bloodGroup,
             DOB,
+            totalBloodDonated: 0,
           })
           .then(() => {
             localStorage.setItem(

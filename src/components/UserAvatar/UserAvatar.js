@@ -19,12 +19,12 @@ function UserAvatar() {
     setAnchorEl(null);
     switch (selectedItem) {
       case "profile":
-        history.push("profile");
+        history.push(`/profile/${user?.email}`);
         break;
       case "logout":
         localStorage.removeItem("ahc_userDetails");
         setUser(null);
-        history.push("login");
+        history.push("/login");
         break;
       default:
         break;

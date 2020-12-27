@@ -48,7 +48,7 @@ function App() {
             <Route path="/yogaAasans">
               <Yoga />
             </Route>
-            <Route path="/profile">
+            <Route path="/profile/:email">
               <Profile />
             </Route>
             <Route path="/login">
