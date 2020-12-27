@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+.footer-container {
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  width: 100%;
+  background-color: rgb(50, 168, 153);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-size: cover;
+}
+
+.footer__brand-logo {
+  height: 50px;
+  width: 50px;
+}
+.footer__brand-logo:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transform: scale(1.01, 1.01);
+  transition: 1s;
+}
+.footer__brand-name {
+  margin: 5px 5px 5px 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+.footer__brand-name:hover {
+  background-color: rgb(50, 168, 153);
+  opacity: 0.9;
+  transform: scale(1.01, 1.01);
+  transition: 1s;
+}
+.footer__left-body {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+}
+.footer i {
+  font-size: 2em;
+  color: white;
+  padding: 0px 15px;
+}
+.footer i:hover {
+  opacity: 0.7;
+  transform: scale(1.01, 1.01);
+  transition: 1s;
+}
+.footer__services > h3 {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.footer__right-support {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.copyright {
+  color: white;
+  display: block;
+}
+@media only screen and (max-width: 800px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer__left,
+  .footer__right {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 638px) {
+  .footer__brand-name {
+    font-size: 18px;
+  }
+  i {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .footer__left,
+  .footer__right {
+    flex-direction: column;
+  }
+}
