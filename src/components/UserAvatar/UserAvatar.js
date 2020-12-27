@@ -7,7 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { useHistory } from "react-router-dom";
 
 function UserAvatar() {
-  const [user] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
   const history = useHistory();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -23,6 +23,7 @@ function UserAvatar() {
         break;
       case "logout":
         localStorage.removeItem("ahc_userDetails");
+        setUser(null);
         history.push("login");
         break;
       default:
