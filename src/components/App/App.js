@@ -16,6 +16,7 @@ import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
 import Covid from "../Covid/Covid";
 import Chatbot from "../Chatbot/Chatbot";
+import Admin from "../Admin/Admin";
 
 function App() {
   const [user] = useContext(UserContext);
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/covid-19">
               <Covid />
+            </Route>
+            <Route path="/admin">
+              <Admin />
             </Route>
             <Route path="/">
               {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
