@@ -1,0 +1,85 @@
+/* base */
+
+body {
+	margin: 0;
+	padding: 40px;
+  }
+  
+  p {
+	margin-top: 0;
+  }
+  
+  a {
+	color: #000;
+  }
+  
+  /* sticky footer */
+  
+  html {
+	height: 100%;
+  }
+  
+  body {
+	min-height: 100%;
+  }
+  
+  #root,
+  .app {
+	min-height: 100vh;
+  }
+  
+  .app {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  header,
+  footer {
+	flex: none;
+  }
+  
+  main {
+	display: block;
+	flex: 1 0 auto;
+  }
+  
+  /* misc utilities */
+  
+  .container {
+	max-width: 960px;
+  }
+  
+  .mr05 {
+	margin-right: 0.50rem;
+  }
+  
+  .p05 {
+	padding: 0.25rem;
+  }
+  
+  .fs-tiny {
+	font-size: 10px;
+  }
+  
+  .bg-light {
+	background-color: #f5f5f5;
+  }
+  
+  .bg-yellow {
+	background-color: #0cf52b;
+  }
+  
+  @media (min-width: 52em) {
+	.md-col-5th {
+	  width: 20%;
+	}
+  }
+  
+  /* misc */
+  
+  .btn-upload input {
+	width: 1px;
+	height: 1px;
+  }
+  
+  

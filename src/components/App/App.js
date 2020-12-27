@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router-dom";
+import { UserContext } from "../../Context/userContext";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import SmartBMI from "../SmartBMI/SmartBMI";
 import DiseaseDetection from "../DiseaseDetection/DiseaseDetection";
-import Emotion from '../EmotionDetection/Emotion'
+import EmotionDetection from "../EmotionDetection/EmotionDetection";
 import NearbyHospitals from "../NearbyHospitals/NearbyHospitals";
 import BloodDonation from "../BloodDonation/BloodDonation";
 import Yoga from "../Yoga/Yoga";
@@ -17,8 +18,11 @@ import Covid from "../Covid/Covid";
 import Chatbot from "../Chatbot/Chatbot";
 
 function App() {
+  const [user] = useContext(UserContext);
+
   return (
     <div className="app">
+       <EmotionDetection />
       <Router>
         <Header />
         <Chatbot />
@@ -33,9 +37,9 @@ function App() {
             <Route path="/diseaseDetection">
               <DiseaseDetection />
             </Route>
-            <Route path="/myEmotion">
-              <Emotion />
-            </Route>
+            {/* <Route path="/myEmotion">
+              <EmotionDetection />
+            </Route> */}
             <Route path="/nearbyHospitals">
               <NearbyHospitals />
             </Route>
@@ -55,7 +59,7 @@ function App() {
               <Covid />
             </Route>
             <Route path="/">
-              {true ? <Redirect to="/home" /> : <Redirect to="/login" />}
+              {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
             </Route>
           </Switch>
           <Footer />
