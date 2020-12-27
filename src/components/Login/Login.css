@@ -150,6 +150,7 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  padding: 10px;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -160,6 +161,7 @@
 /* Position the front and back side */
 .flip__card-front,
 .flip__card-back {
+  padding: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
