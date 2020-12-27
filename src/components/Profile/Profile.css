@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(64, 224, 208, 0.527);
+}
+.profile_card {
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+  font-weight: 1000;
+  border-radius: 15px;
+}
+.profile_card .name {
+  font-size: 2em;
+  font-weight: 1000;
+}
+.profile_card .blood-group {
+  font-size: 1.5em;
+  color: yellowgreen;
+}
+.profile_card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile_card .blood-amount {
+  font-size: 1.5em;
+  color: tomato;
+  margin: 2px 5px;
+}
