@@ -10,8 +10,6 @@ function Profile() {
   const email = params.email;
   const [userDetails, setUserDetails] = useState(null);
 
-  console.log(userDetails);
-
   useEffect(() => {
     db.collection("users")
       .where("email", "==", email)

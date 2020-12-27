@@ -6,6 +6,7 @@ import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatIcon from "@material-ui/icons/Chat";
 import SendIcon from "@material-ui/icons/Send";
 import { db } from "../../firebase";
+import { Link } from "react-router-dom";
 
 function Post({
   id,
@@ -88,7 +89,10 @@ function Post({
       <div className="post__container">
         <div className="post__header">
           <div className="post__userDetails">
-            <Avatar src={authorPic} /> <p>{authorName}</p>
+            <Link to={`/profile/${authorEmail}`}>
+              <Avatar src={authorPic} />
+            </Link>{" "}
+            <p>{authorName}</p>
           </div>
           <div className="post__date" title={timestamp.toDate().toUTCString()}>
             {timestamp.toDate().toLocaleDateString()}
