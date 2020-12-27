@@ -1,0 +1,311 @@
+.login {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.login::-webkit-scrollbar {
+  width: 4px;
+}
+.login::-webkit-scrollbar-track {
+  background: #b9b9b9;
+}
+.login::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #5ca5ac;
+}
+.landing__page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+.wrapper__wave {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(to top, #3586e2 0%, #e7f0fd 100%);
+  overflow: hidden;
+}
+
+.wave {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  margin-left: -45%;
+  margin-top: -25%;
+  border-radius: 35%;
+  background: rgba(255, 255, 255, 0.75);
+  animation: wave 15s infinite linear;
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.Ahc__logo {
+  z-index: 1001;
+  margin-top: -60px;
+  font-size: 12em;
+  font-family: "Anton", sans-serif;
+  color: teal;
+  letter-spacing: 5px;
+}
+.Ahc__brand__name {
+  z-index: 1001;
+  margin-top: -8vh;
+  font-size: 3em;
+  font-family: "Anton", sans-serif;
+  opacity: 0.7;
+  color: teal;
+  letter-spacing: 2px;
+}
+.Ahc__services__button {
+  z-index: 1005;
+  position: absolute;
+  bottom: 10px;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.7;
+  color: teal;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Ahc__services__button > a > p {
+  background-color: rgb(90, 235, 179);
+  color: black;
+  font-weight: bolder;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px rgb(90, 141, 235);
+  border-bottom: 2px solid white;
+}
+
+.Ahc__services {
+  width: 100vw;
+  background-color: cornsilk;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.heading__our-services {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3em;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  width: 100%;
+  height: 80%;
+}
+.services__grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 225px;
+  width: 300px;
+  background-color: transparent;
+  border-radius: 30px 0px 30px 0px;
+}
+
+.flip__card {
+  background-color: transparent;
+  height: 225px;
+  width: 300px;
+  margin: 0;
+  perspective: 1200px; /* makes the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip__card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip__card:hover .flip__card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip__card-front,
+.flip__card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip__card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Style the back side */
+.flip__card-back {
+  background-color: rgb(226, 210, 146);
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 30px 0px 30px 0px;
+}
+
+.flip__card-front > img {
+  max-width: 300px;
+  height: 225px;
+}
+
+.Join__us_button {
+  font-size: 1.5em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  opacity: 0.7;
+  color: black;
+  padding: 12px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 229, 102);
+  border-radius: 35px;
+  box-shadow: 0px 3px 6px rgba(88, 83, 35, 0.7);
+}
+
+.Join__us {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.Join__us_container {
+  height: 100%;
+  width: 100%;
+  background-color: #e7f0fd;
+  opacity: 0.75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Join__us_heading {
+  font-size: 3em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+}
+.buttons__box {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.sign__in_box {
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: khaki;
+  font-family: "Anton", sans-serif;
+  margin: 15px;
+  border-radius: 15px;
+}
+.sign__up_box {
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Anton", sans-serif;
+  background-color: khaki;
+  margin: 15px;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 960px) {
+  .services__grid {
+    grid-template-columns: auto auto;
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .wave {
+    height: 130vw;
+    width: 130vw;
+    margin-left: -65%;
+    margin-top: -25%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .services__grid {
+    grid-template-columns: auto;
+    row-gap: 40px;
+  }
+  .buttons__box {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .wave {
+    height: 130vh;
+    width: 130vh;
+  }
+  .heading__our-services {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 310px) {
+  /* for very small devices */
+  .services__grid-cell,
+  .flip__card {
+    height: 150px;
+    width: 200px;
+  }
+  .flip__card-front > img {
+    height: 150px;
+  }
+  .flip__card-back > h2 {
+    font-size: 1em;
+  }
+  .flip__card-back p {
+    font-size: 0.8em;
+  }
+}

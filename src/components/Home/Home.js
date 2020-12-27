@@ -6,7 +6,6 @@ import Post from "../Post/Post";
 
 function Home() {
   const [posts, setPosts] = useState(null);
-  console.log(posts);
 
   useEffect(() => {
     db.collection("posts")
