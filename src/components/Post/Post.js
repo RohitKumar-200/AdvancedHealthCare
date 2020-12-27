@@ -94,8 +94,8 @@ function Post({
             </Link>{" "}
             <p>{authorName}</p>
           </div>
-          <div className="post__date" title={timestamp.toDate().toUTCString()}>
-            {timestamp.toDate().toLocaleDateString()}
+          <div className="post__date" title={timestamp?.toDate().toUTCString()}>
+            {timestamp?.toDate().toLocaleDateString()}
           </div>
         </div>
         <h2 className="post__heading">{title}</h2>
