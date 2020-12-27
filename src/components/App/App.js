@@ -8,7 +8,7 @@ import Login from "../Login/Login";
 import Home from "../Home/Home";
 import SmartBMI from "../SmartBMI/SmartBMI";
 import DiseaseDetection from "../DiseaseDetection/DiseaseDetection";
-import EmotionDetection from "../EmotionDetection/EmotionDetection";
+import Emotion from '../EmotionDetection/Emotion'
 import NearbyHospitals from "../NearbyHospitals/NearbyHospitals";
 import BloodDonation from "../BloodDonation/BloodDonation";
 import Yoga from "../Yoga/Yoga";
@@ -37,7 +37,7 @@ function App() {
               <DiseaseDetection />
             </Route>
             <Route path="/myEmotion">
-              <EmotionDetection />
+              <Emotion />
             </Route>
             <Route path="/nearbyHospitals">
               <NearbyHospitals />
