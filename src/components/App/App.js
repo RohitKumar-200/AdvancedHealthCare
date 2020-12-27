@@ -37,9 +37,9 @@ function App() {
             <Route path="/diseaseDetection">
               <DiseaseDetection />
             </Route>
-            {/* <Route path="/myEmotion">
+            {<Route path="/myEmotion">
               <EmotionDetection />
-            </Route> */}
+            </Route>}
             <Route path="/nearbyHospitals">
               <NearbyHospitals />
             </Route>
