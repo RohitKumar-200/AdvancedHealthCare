@@ -51,7 +51,7 @@
   justify-content: center;
   align-items: center;
 }
-.leader_detail > .MuiAvatar-root {
+.leader_detail .MuiAvatar-root {
   height: 80px;
   width: 80px;
 }

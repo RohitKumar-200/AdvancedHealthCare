@@ -33,8 +33,10 @@ function NewPost() {
   };
 
   const handlePostSubmit = () => {
-    if (title === "" || message === "" || image === null)
+    if (title === "" || message === "" || image === null) {
       alert("Post cannot be empty");
+      return;
+    }
 
     const imageName = Math.floor(Math.random() * 1000000) + image.name;
     const uploadTask = storage.ref(`images/${imageName}`).put(image);
