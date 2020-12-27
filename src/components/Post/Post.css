@@ -1,0 +1,141 @@
+.post__container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px -5px #00000050;
+}
+
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post__userDetails {
+  display: flex;
+  align-items: center;
+}
+.post__userDetails p {
+  margin-left: 10px;
+}
+.post__date {
+  color: gray;
+  cursor: default;
+}
+.post__heading {
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 60px;
+  border-bottom: 1px solid #00000010;
+}
+.post__message {
+  padding: 10px 0;
+}
+.post__imgContainer {
+  width: 100%;
+  margin-top: 5px;
+}
+.post__imgContainer > img {
+  width: 100%;
+}
+.post__response {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.post__likes {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #50c0b2;
+  cursor: pointer;
+}
+.post__likes.active {
+  color: rgb(0 90 255);
+}
+.post__likes > span {
+  margin-left: 5px;
+  color: #fff !important;
+}
+.post__viewCommentButton {
+  margin-left: 20px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #50c0b2;
+  cursor: pointer;
+}
+.post__viewCommentButton > span {
+  margin-left: 5px;
+}
+.post__newCommentContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.post__newCommentbox {
+  margin-left: 10px;
+  border: 1px solid #32a899;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.post__newCommentboxInput {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  width: 200px;
+  border-radius: inherit;
+  font-size: 16px;
+  transition-duration: 0.5s;
+}
+.post__newCommentboxInput:focus {
+  width: 300px;
+}
+.post__newCommentbox .MuiSvgIcon-root {
+  margin: 0 5px;
+  color: #32a899;
+  cursor: pointer;
+}
+.post__commentContainer {
+  margin-top: 20px;
+  border: 1px solid #00000030;
+  border-bottom: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.post__Comment {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00000030;
+}
+.post__Comment > p {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .post__Container {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .post__Heading {
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .post__newCommentbox {
+    width: 100%;
+  }
+  .post__newCommentboxInput {
+    width: 100%;
+  }
+  .post__newCommentboxInput:focus {
+    width: 100%;
+  }
+}

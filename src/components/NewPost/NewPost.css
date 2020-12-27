@@ -1,0 +1,63 @@
+.newPost__heading {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.newPost__Container {
+  margin-top: 20px;
+  padding: 0 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px -5px #00000050;
+}
+.newPost__Container .MuiTextField-root {
+  width: 400px !important;
+}
+
+.newPost__ImageContainer {
+  display: flex;
+  align-items: center;
+}
+.newPost__ImageName {
+  margin-left: 10px;
+  font-size: small;
+  color: grey;
+}
+.newPost__ImageContainer {
+  margin: 5px 0;
+}
+.newPost__ImageContainer input {
+  display: none;
+}
+.newPost__ImageContainer .MuiSvgIcon-root {
+  color: #6e7785 !important;
+  cursor: pointer;
+}
+.newPost__progress {
+  margin-left: 10px;
+}
+.newPost__Button .MuiButton-root {
+  background-color: #31d570 !important;
+  color: #ffffff !important;
+  width: 100px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .newPost__heading {
+    font-size: 25px;
+  }
+  .newPost__Container {
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .newPost__Container .MuiTextField-root {
+    width: 100% !important;
+  }
+}
