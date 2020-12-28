@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
+.yoga {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 15px;
+  background-color: rgb(184 246 188);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.yoga_pose_title {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+.yoga_pose_detail {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  text-align: justify;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.yoga > .yoga__card {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  height: 430px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-radius: 0px 0px 20px 20px;
+  background-color: rgba(50, 163, 153, 0.5);
+  border-bottom: 2px solid white;
+}
+.yoga__card:hover {
+  transition: 0.5s;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  width: 303px;
+}
+
+@media only screen and (max-width: 990px) {
+  /* for Tablets */
+  .yoga {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* for Mobile devices */
+  .yoga_pose_detail {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* for Mobile devices */
+  .yoga {
+    grid-template-columns: auto;
+  }
+}
