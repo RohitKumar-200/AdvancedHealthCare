@@ -7,8 +7,6 @@ import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import SmartBMI from "../SmartBMI/SmartBMI";
-import DiseaseDetection from "../DiseaseDetection/DiseaseDetection";
-import EmotionDetection from "../EmotionDetection/EmotionDetection";
 import NearbyHospitals from "../NearbyHospitals/NearbyHospitals";
 import BloodDonation from "../BloodDonation/BloodDonation";
 import Yoga from "../Yoga/Yoga";
@@ -33,12 +31,6 @@ function App() {
             </Route>
             <Route path="/smartBMI">
               <SmartBMI />
-            </Route>
-            <Route path="/diseaseDetection">
-              <DiseaseDetection />
-            </Route>
-            <Route path="/myEmotion">
-              <EmotionDetection />
             </Route>
             <Route path="/nearbyHospitals">
               <NearbyHospitals />

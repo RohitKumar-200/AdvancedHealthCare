@@ -36,21 +36,21 @@ function Header() {
               <Link to="/home">Home</Link>
             </li>
             <li>
-              <MyHealth />
-            </li>
-            <li>
-              <Link to="/nearbyHospitals">Nearby Hospitals</Link>
-            </li>
-            <li>
               <Link to="/bloodDonation">Blood Donation</Link>
+            </li>
+            <li>
+              <Link to="/smartBMI">Smart BMI</Link>
             </li>
             <li>
               <Link to="/yogaAasans">Yoga Aasans</Link>
             </li>
+            <li>
+              <Link to="/nearbyHospitals">Nearby Hospitals</Link>
+            </li>
           </ul>
         </div>
       </div>
-      {/* {menuOpen ? ( */}
+
       <div
         className={`header__sideNav ${menuOpen ? "header__sideNavActive" : ""}`}
       >
@@ -58,19 +58,9 @@ function Header() {
           <Link to="/home">
             <li>Home</li>
           </Link>
-
-          <Link to="smartBMI">
+          <Link to="/smartBMI">
             <li>Smart BMI</li>
           </Link>
-
-          <Link to="/diseaseDetection">
-            <li>Disease detection</li>
-          </Link>
-
-          <Link to="/myEmotion">
-            <li>Know your emotion</li>
-          </Link>
-
           <Link to="/nearbyHospitals">
             <li>Nearby Hospitals</li>
           </Link>
@@ -88,9 +78,6 @@ function Header() {
           </Link>
         </ul>
       </div>
-      {/* ) : (
-        ""
-      )} */}
 
       <div className="header__right">
         <div className="header__user">
