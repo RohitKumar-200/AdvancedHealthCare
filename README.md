@@ -1,1 +1,6 @@
 # Advanced Health Care
+### Build By : DumbGeeks at Hacknagpur
+
+## USP
+- Just like any other social media platforms the main motive of this platform is to create a community of people who care about thier health as well as of others. We have created a blog posting platform where people can share thier experiences about thier medical conditions, how they tackled them or any other life experinces where their health was challenged. In India there are very few Health centered community platforms.
+- More than 80% accidental deaths happen because of blood lose or short-tage of blood in blood banks. Even today people fear to donate blood. the reports have provident that the number of death cases due to short blood supply in time will increase to 88-90% in next few years. We have focused or micro blogging towards this problem, So that blood donation can be promoted and to create reliable donors. In our Platform Blood donors can donate blood and submit a report once his/her document gets verified by admin he/she will get a live-saver (`hero`) rank on our community donor list. "We think that if you are a `hero` you should get recognition", which in turn inspires other new donors to come forward and donate for mankind.
