@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./AdminBloodDonation.css";
-import {db} from "../../firebase";
+import { db } from "../../firebase";
 import firebase from "firebase";
+import { useSnackbar } from "notistack";
 
 function AdminBloodDonation() {
+  const { enqueueSnackbar } = useSnackbar();
   const [donations, setDonations] = useState(null);
 
   useEffect(() => {
@@ -41,6 +43,8 @@ function AdminBloodDonation() {
             totalBloodDonated: totalBlood,
           })
           .then(() => {
+            enqueueSnackbar("Request approved", { variant: "success" });
+
             db.collection("posts").add({
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               authorEmail: "medibot@example.com",
@@ -66,6 +70,9 @@ function AdminBloodDonation() {
       })
       .catch(function(error) {
         console.error("Error on blood donation approval : ", error);
+        enqueueSnackbar("Error on blood donation approval", {
+          variant: "error",
+        });
       });
   };
 
@@ -73,8 +80,14 @@ function AdminBloodDonation() {
     db.collection("bloodDonation")
       .doc(id)
       .delete()
+      .then(() => {
+        enqueueSnackbar("Approval denied", { variant: "success" });
+      })
       .catch(function(error) {
         console.error("Error removing document: ", error);
+        enqueueSnackbar("Error on blood donation rejection", {
+          variant: "error",
+        });
       });
   };
 
