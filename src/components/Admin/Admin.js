@@ -26,11 +26,11 @@ function Admin() {
       {isAdmin ? (
         <div className="admin__pannel">
           <div className="admin__header">
-            <div className="admin__headerLeft">
-              <span onClick={(e) => setHeaderOption(1)}>Posts</span>
+            <div className="admin__headerLeft" onClick={(e) => setHeaderOption(1)}>
+              <span >Posts</span>
             </div>
-            <div className="admin__headerRight">
-              <span onClick={(e) => setHeaderOption(2)}>Blood donations</span>
+            <div className="admin__headerRight" onClick={(e) => setHeaderOption(2)}>
+              <span >Blood donations</span>
             </div>
           </div>
           <div className="admin__body">
