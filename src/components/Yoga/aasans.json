@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Vriksasana",
+        "description":"Improves balance and stability in the legs.Strengthens the ligaments and tendon of the feet. Strengthens and tones the entire standing leg, up to the buttocks. Assists the body in establishing pelvic stability. Strengthen the bones of the hips and legs due to the weight-bearing nature of the pose."
+    },
+    {
+        "name":"Tadasana",
+        "description":"It helps in correcting your posture and improves your balance by making your spine more agile. It helps in increasing the flexibility of your ankles, thighs and joints. It can tone your hips and abdomen and helps to gain control over your muscular movements."
+    },
+    {
+        "name":"Bhujangasana",
+        "description":"Strengthens the spine. Stretches chest and lungs, shoulders, and abdomen. Tones the buttocks. Stimulates abdominal organs. Helps relieve stress and fatigue. Opens the heart and lungs. Soothes sciatica. Therapeutic for asthma."
+    },
+    {
+        "name":"Vajrasana",
+        "description":"It gives discharge from sciatic pain. It helps to reduce the gas difficulty if this asana arranged directly next a meal. Increases Flexibility in Ankles. Improves Blood Circulation. Strengthens Pelvic Muscles. Improves Digestion"
+    },
+    {
+        "name":"Halasana",
+        "description":"Calms the brain. Stimulates the abdominal organs and the thyroid gland. Stretches the shoulders and spine. Helps relieve the symptoms of menopause. Reduces stress and fatigue. Therapeutic for backache, headache, infertility, insomnia, sinusitis."
+    },
+    {
+        "name":"Shalabhasana",
+        "description":"Strengthens the muscles of the spine, buttocks, and backs of the arms and legs. Stretches the shoulders, chest, belly, and thighs. Improves posture. Stimulates abdominal organs. Helps relieve stress."
+    },
+    {
+        "name":"Uttanasana",
+        "description":"Stretches the hips, hamstrings, and calves. Strengthens the thighs and knees. Keeps your spine strong and flexible. Reduces stress, anxiety, depression, and fatigue. Calms the mind and soothes the nerves. Relieves tension in the spine, neck, and back. Activates the abdominal muscles."
+    },
+    {
+        "name":"Natarajasana",
+        "description":"Practicing this asana gives strength to your chest, ankles, hips, and legs. This asana increases your metabolism and helps in weight loss. It gives your groin, abdominal organs, and thighs a good stretch. Your posture is improved, and balance is increased. It helps better your digestion."
+    },
+    {
+        "name":"Sarvangasana",
+        "description":"mproved digestion, strengthened immune system, reduced fluid retention in the lower body, and bringing back deoxygenated blood flow to the heart. Shoulder stand also calms and energizes while reducing stress and fatigue."
+    },
+    {
+        "name":"Dhanurasana",
+        "description":"Stretches the entire front of the body, ankles, thighs and groins, abdomen and chest, and throat, and deep hip flexors (psoas) Strengthens the back muscles. Improves posture. Stimulates the organs of the abdomen and neck."
+    },
+    {
+        "name":"Chakrasana",
+        "description":"Stretches the chest and lungs. Strengthens the arms and wrists, legs, buttocks, abdomen, and spine. Stimulates the thyroid and pituitary. Increases energy and counteracts depression. Therapeutic for asthma, back pain, infertility, and osteoporosis."
+    },
+    {
+        "name":"Trikonasana",
+        "description":"Stretches and strengthens the thighs, knees, and ankles. Stretches the hips, groins, hamstrings, and calves; shoulders, chest, and spine. Stimulates the abdominal organs. Helps relieve stress. Improves digestion. Helps relieve the symptoms of menopause."
+    }
+]
