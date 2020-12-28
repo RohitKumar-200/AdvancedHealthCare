@@ -17,6 +17,7 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   min-width: 300px;
+  margin: 10px 15px;
 }
 .donor__profile__image {
   width: 150px;
