@@ -5,8 +5,11 @@ import { Avatar } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useHistory } from "react-router-dom";
+import { useSnackbar } from "notistack";
 
 function UserAvatar() {
+  const { enqueueSnackbar } = useSnackbar();
+
   const [user, setUser] = useContext(UserContext);
   const history = useHistory();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,6 +27,7 @@ function UserAvatar() {
       case "logout":
         localStorage.removeItem("ahc_userDetails");
         setUser(null);
+        enqueueSnackbar("Logout successful", { variant: "success" });
         history.push("/login");
         break;
       default:
