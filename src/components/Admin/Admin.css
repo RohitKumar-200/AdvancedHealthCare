@@ -18,7 +18,7 @@
   color: white;
   box-shadow: 0 5px 20px -15px #000;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: 1.5px;
 }
 .admin__headerLeft,
@@ -34,7 +34,10 @@
 .admin__header span {
   cursor: pointer;
 }
-
+.admin__headerLeft:hover,
+.admin__headerRight:hover {
+  background-color: rgba(0, 128, 128, 0.541);
+}
 .admin__body {
   margin-top: 50px;
   height: calc(100vh - 50px);
