@@ -101,7 +101,7 @@ function Post({
         <h2 className="post__heading">{title}</h2>
         <p className="post__message">{message}</p>
         <div className="post__imgContainer">
-          <img src={imgUrl} alt="northern lights" />
+          <img src={imgUrl} alt={title} />
         </div>
         <div className="post__response">
           <div

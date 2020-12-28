@@ -7,7 +7,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
 function AdminPosts() {
   const [posts, setPosts] = useState(null);
-  console.log(posts);
 
   useEffect(() => {
     db.collection("posts")
@@ -34,8 +33,8 @@ function AdminPosts() {
 
   return (
     <div className="adminPost">
-      {posts?.map((post) => (
-        <div className="adminPost__container">
+      {posts?.map((post, i) => (
+        <div className="adminPost__container" key={i}>
           <div className="adminPost__header">
             <div className="adminPost__userDetails">
               <Link to={`/profile/${post.authorEmail}`}>

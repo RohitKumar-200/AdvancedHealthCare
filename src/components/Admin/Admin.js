@@ -34,7 +34,7 @@ function Admin() {
             </div>
           </div>
           <div className="admin__body">
-            {headerOption == 1 ? <AdminPosts /> : <AdminBloodDonation />}
+            {headerOption === 1 ? <AdminPosts /> : <AdminBloodDonation />}
           </div>
         </div>
       ) : (
