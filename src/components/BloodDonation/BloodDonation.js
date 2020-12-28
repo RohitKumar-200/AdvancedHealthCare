@@ -9,6 +9,7 @@ import Icon from "@material-ui/core/Icon";
 import { Link } from "react-router-dom";
 import { storage, db } from "../../firebase";
 import firebase from "firebase";
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function BloodDonation() {
+  const { enqueueSnackbar } = useSnackbar();
+
   const [user] = useContext(UserContext);
   const [users, setUsers] = useState(null);
   const [donationMessage, setDonationMessage] = useState("");
@@ -38,7 +41,7 @@ function BloodDonation() {
 
   const handleDonationPublish = () => {
     if (!user) {
-      alert("please login to continue");
+      enqueueSnackbar("Please login to continue", { variant: "error" });
       return;
     } else if (
       donationMessage === "" ||
@@ -46,7 +49,9 @@ function BloodDonation() {
       donationAmount < 1 ||
       !donationImg
     ) {
-      alert("please complete the form before proceeding");
+      enqueueSnackbar("please complete the form before proceeding", {
+        variant: "error",
+      });
       return;
     }
 
@@ -61,6 +66,9 @@ function BloodDonation() {
       },
       (error) => {
         console.log(error);
+        enqueueSnackbar("An error occured, try again later!", {
+          variant: "error",
+        });
       },
       () => {
         storage
@@ -68,22 +76,33 @@ function BloodDonation() {
           .child(imageName)
           .getDownloadURL()
           .then((imgUrl) => {
-            db.collection("bloodDonation").add({
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-              donorEmail: user.email,
-              donorName: user.name,
-              donorPic: user.pic,
-              message: donationMessage,
-              amount: donationAmount,
-              date: donationDate,
-              imgUrl,
-            });
-
-            setProgress(0);
-            setDonationMessage("");
-            setDonationAmount(1);
-            setDonationDate("");
-            setDonationImg(null);
+            db.collection("bloodDonation")
+              .add({
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                donorEmail: user.email,
+                donorName: user.name,
+                donorPic: user.pic,
+                message: donationMessage,
+                amount: donationAmount,
+                date: donationDate,
+                imgUrl,
+              })
+              .then(() => {
+                enqueueSnackbar("Your request added successfully", {
+                  variant: "success",
+                });
+                setProgress(0);
+                setDonationMessage("");
+                setDonationAmount(1);
+                setDonationDate("");
+                setDonationImg(null);
+              })
+              .catch((error) => {
+                console.log(error);
+                enqueueSnackbar("An error occured, try again later!", {
+                  variant: "error",
+                });
+              });
           });
       }
     );

@@ -4,8 +4,10 @@ import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { useSnackbar } from "notistack";
 
 function AdminPosts() {
+  const { enqueueSnackbar } = useSnackbar();
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
@@ -26,8 +28,12 @@ function AdminPosts() {
     db.collection("posts")
       .doc(id)
       .delete()
+      .then(() => {
+        enqueueSnackbar("Post deleted successfully", { variant: "success" });
+      })
       .catch(function(error) {
         console.error("Error removing document: ", error);
+        enqueueSnackbar("error deleting post", { variant: "error" });
       });
   };
 

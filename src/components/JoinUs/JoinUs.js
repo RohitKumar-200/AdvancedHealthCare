@@ -1,11 +1,14 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "./JoinUs.css";
-import {UserContext} from "../../Context/userContext";
-import {auth, provider} from "../../firebase";
-import {useHistory} from "react-router-dom";
-import {db} from "../../firebase";
+import { UserContext } from "../../Context/userContext";
+import { auth, provider } from "../../firebase";
+import { useHistory } from "react-router-dom";
+import { db } from "../../firebase";
+import { useSnackbar } from "notistack";
 
 function JoinUs() {
+  const { enqueueSnackbar } = useSnackbar();
+
   const [, setUser] = useContext(UserContext);
   const history = useHistory();
 
@@ -35,19 +38,27 @@ function JoinUs() {
                 email: result.user.email,
                 pic: result.user.photoURL,
               });
+              enqueueSnackbar("Successfully signed in", { variant: "success" });
               history.push("/home");
             } else {
-              alert("you don't have account, Sign Up to continue");
+              enqueueSnackbar("you don't have account, Sign Up to continue", {
+                variant: "error",
+              });
             }
           });
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        console.log(error.message);
+        enqueueSnackbar("An error occured, try again later!", {
+          variant: "error",
+        });
+      });
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
     if (DOB === "" || gender === "" || bloodGroup === "") {
-      alert("Sign up form cannot be empty");
+      enqueueSnackbar("Sign up form cannot be empty", { variant: "error" });
       return;
     }
 
@@ -78,10 +89,16 @@ function JoinUs() {
               email: result.user.email,
               pic: result.user.photoURL,
             });
+            enqueueSnackbar("Sign Up successful", { variant: "success" });
             history.push("/home");
           });
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        console.log(error.message);
+        enqueueSnackbar("An error occured, try again later!", {
+          variant: "error",
+        });
+      });
   };
 
   return (

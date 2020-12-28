@@ -7,8 +7,11 @@ import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import { Button } from "@material-ui/core";
 import { storage, db } from "../../firebase";
 import firebase from "firebase";
+import { useSnackbar } from "notistack";
 
 function NewPost() {
+  const { enqueueSnackbar } = useSnackbar();
+
   const [user] = useContext(UserContext);
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -34,7 +37,7 @@ function NewPost() {
 
   const handlePostSubmit = () => {
     if (title === "" || message === "" || image === null) {
-      alert("Post cannot be empty");
+      enqueueSnackbar("Post cannot be empty", { variant: "error" });
       return;
     }
 
@@ -49,6 +52,9 @@ function NewPost() {
       },
       (error) => {
         console.log(error);
+        enqueueSnackbar("An error occured while uploading image, Try again!", {
+          variant: "error",
+        });
       },
       () => {
         storage
@@ -56,22 +62,39 @@ function NewPost() {
           .child(imageName)
           .getDownloadURL()
           .then((imgUrl) => {
-            db.collection("posts").add({
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-              authorEmail: user.email,
-              authorName: user.name,
-              authorPic: user.pic,
-              title,
-              message,
-              imgUrl,
-              likes: [],
-              comments: [],
+            db.collection("posts")
+              .add({
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                authorEmail: user.email,
+                authorName: user.name,
+                authorPic: user.pic,
+                title,
+                message,
+                imgUrl,
+                likes: [],
+                comments: [],
+              })
+              .then(() => {
+                enqueueSnackbar("Post created successfully", {
+                  variant: "success",
+                });
+                setProgress(0);
+                setTitle("");
+                setMessage("");
+                setImage(null);
+              })
+              .catch((error) => {
+                console.log(error);
+                enqueueSnackbar("An error occured, Try again!", {
+                  variant: "error",
+                });
+              });
+          })
+          .catch((error) => {
+            console.log(error);
+            enqueueSnackbar("An error occured, Try again!", {
+              variant: "error",
             });
-
-            setProgress(0);
-            setTitle("");
-            setMessage("");
-            setImage(null);
           });
       }
     );
