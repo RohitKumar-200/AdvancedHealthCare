@@ -49,7 +49,13 @@ function AdminPosts() {
               {post.timestamp.toDate().toLocaleDateString()}
             </div>
           </div>
-          <h2 className="adminPost__heading">{post.title}</h2>
+          {post.refEmail ? (
+            <Link to={`/profile/${post.refEmail}`}>
+              <h2 className="adminPost__heading">{post.title}</h2>
+            </Link>
+          ) : (
+            <h2 className="adminPost__heading">{post.title}</h2>
+          )}
           <p className="adminPost__message">{post.message}</p>
           <div className="adminPost__imgContainer">
             <img src={post.imgUrl} alt="northern lights" />

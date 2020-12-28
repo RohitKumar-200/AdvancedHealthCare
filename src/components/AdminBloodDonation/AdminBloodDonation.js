@@ -45,6 +45,7 @@ function AdminBloodDonation() {
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               authorEmail: "medibot@example.com",
               authorName: "Medi bot",
+              refEmail: email,
               authorPic:
                 "https://firebasestorage.googleapis.com/v0/b/advanced-health-care.appspot.com/o/images%2FchatbotIcon.png?alt=media&token=af166b5b-d901-4a68-8d35-d7cb6fec179f",
               title: "New Blood Donation",

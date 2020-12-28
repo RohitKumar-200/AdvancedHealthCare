@@ -37,7 +37,10 @@ function BloodDonation() {
   };
 
   const handleDonationPublish = () => {
-    if (
+    if (!user) {
+      alert("please login to continue");
+      return;
+    } else if (
       donationMessage === "" ||
       donationDate === "" ||
       donationAmount < 1 ||

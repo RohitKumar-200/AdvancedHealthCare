@@ -37,6 +37,7 @@ function Home() {
           likes={post.likes}
           comments={post.comments}
           timestamp={post.timestamp}
+          refEmail={post.refEmail}
         />
       ))}
     </div>

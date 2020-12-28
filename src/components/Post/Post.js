@@ -19,6 +19,7 @@ function Post({
   likes,
   comments,
   timestamp,
+  refEmail,
 }) {
   const [user] = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
@@ -98,7 +99,13 @@ function Post({
             {timestamp?.toDate().toLocaleDateString()}
           </div>
         </div>
-        <h2 className="post__heading">{title}</h2>
+        {refEmail ? (
+          <Link to={`/profile/${refEmail}`}>
+            <h2 className="post__heading">{title}</h2>
+          </Link>
+        ) : (
+          <h2 className="post__heading">{title}</h2>
+        )}
         <p className="post__message">{message}</p>
         <div className="post__imgContainer">
           <img src={imgUrl} alt={title} />
