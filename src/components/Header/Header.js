@@ -45,7 +45,7 @@ function Header() {
               <Link to="/yogaAasans">Yoga Aasans</Link>
             </li>
             <li>
-              <Link to="/nearbyHospitals">Nearby Hospitals</Link>
+              <Link to="/covid-19">Covid 19</Link>
             </li>
           </ul>
         </div>

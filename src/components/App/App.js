@@ -7,7 +7,6 @@ import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import SmartBMI from "../SmartBMI/SmartBMI";
-import NearbyHospitals from "../NearbyHospitals/NearbyHospitals";
 import BloodDonation from "../BloodDonation/BloodDonation";
 import Yoga from "../Yoga/Yoga";
 import Profile from "../Profile/Profile";
@@ -31,9 +30,6 @@ function App() {
             </Route>
             <Route path="/smartBMI">
               <SmartBMI />
-            </Route>
-            <Route path="/nearbyHospitals">
-              <NearbyHospitals />
             </Route>
             <Route path="/bloodDonation">
               <BloodDonation />
