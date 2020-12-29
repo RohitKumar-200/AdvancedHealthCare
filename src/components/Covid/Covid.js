@@ -5,27 +5,15 @@ function Covid() {
   return (
     <div className="covid">
       <section id="top">
+        <p className="covid-buttons"> Vaccination Update </p>
         <div className="covid-visualizer">
           <iframe
             src="https://covidvisualizer.com/"
             title="Free 3D covid Visualizer from covidvisualizer.com"
-            height="510px"
-            width="50%"
-            allowFullScreen="true"
+            height="460px"
+            width="100%"
             frameborder="0"
           ></iframe>
-          <div className="vaccination-update-box">
-            <p className="covid-buttons"> Vaccination Update </p>
-            <div className="covid-vaccination-update">
-              <iframe
-                src="https://timesofindia.indiatimes.com/india/covid-19-oxford-vaccine-may-get-nod-in-a-few-days/articleshow/79982699.cms"
-                frameborder="2"
-                title="Updates on covid vaccination from most trusted Timesofindia"
-                height="100%"
-                width="100%"
-              ></iframe>
-            </div>
-          </div>
         </div>
         <div className="covid-buttons">
           <a href="#sec-1">Covid Symptoms </a>
