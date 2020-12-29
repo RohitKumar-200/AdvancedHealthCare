@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Covid.css";
 
 function Covid() {
+  const [percentage, setPercentage] = useState(0);
+  console.log(percentage);
+
+  const handleSymptomChecker = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
+
+  const togglePercentage = (bool, value) => {
+    setPercentage(percentage + (bool ? value : -value));
+  };
+
   return (
     <div className="covid">
       <section id="top">
@@ -25,7 +37,7 @@ function Covid() {
         <div className="covid-check-list">
           <div className="covid-check-list-left">
             <h1>Have you feeling any of the below symptoms</h1>
-            <form action="#">
+            <form onSubmit={handleSymptomChecker}>
               {/* Symptoms */}
               {/* symptom : 1 */}
               <div className="symptom">
@@ -34,6 +46,7 @@ function Covid() {
                   type="checkbox"
                   name="box-1"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 20)}
                 />
                 <label htmlFor="box-1">
                   Feeling feverish or have an elevated, measured temperature
@@ -46,6 +59,7 @@ function Covid() {
                   type="checkbox"
                   name="box-2"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 20)}
                 />
                 <label htmlFor="box-2">Loss of taste or smell</label>
               </div>
@@ -56,6 +70,7 @@ function Covid() {
                   type="checkbox"
                   name="box-3"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 3)}
                 />
                 <label htmlFor="box-3">Cough</label>
               </div>
@@ -66,6 +81,7 @@ function Covid() {
                   type="checkbox"
                   name="box-4"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 7)}
                 />
                 <label htmlFor="box-4">Difficulty breathing</label>
               </div>
@@ -76,6 +92,7 @@ function Covid() {
                   type="checkbox"
                   name="box-5"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 7)}
                 />
                 <label htmlFor="box-5">Shortness of breath</label>
               </div>
@@ -86,6 +103,7 @@ function Covid() {
                   type="checkbox"
                   name="box-6"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 20)}
                 />
                 <label htmlFor="box-6">Shaking or exaggerated shivering</label>
               </div>
@@ -96,6 +114,7 @@ function Covid() {
                   type="checkbox"
                   name="box-7"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 3)}
                 />
                 <label htmlFor="box-7">Congestion or runny nose</label>
               </div>
@@ -106,13 +125,17 @@ function Covid() {
                   type="checkbox"
                   name="box-8"
                   className="check"
+                  onChange={(e) => togglePercentage(e.target.checked, 20)}
                 />
                 <label htmlFor="box-8">
                   Significant muscle pain or Fatigue
                 </label>
                 <br />
                 <br />
-                <button className="calc-covid"> Calculate</button>
+                {/* <button className="calc-covid" type="submit">
+                  {" "}
+                  Calculate
+                </button> */}
               </div>
             </form>
           </div>
@@ -120,9 +143,11 @@ function Covid() {
           {/* right side starts */}
           <div className="covid-check-list-right">
             {/* Show calculated Result here */}
-            <div className="percent-show">0%</div>
+            <div className="percent-show">
+              {percentage === 100 ? 99 : percentage}%
+            </div>
             <div className="result-text">
-              Please Calculate to know the results.
+              Possibility of having Covid 19
               {/* If percentage is more than 40 % then show "PLease consult a doctor". */}
               {/* else show that "Stay safe and keep going with proper diet and simple painkiller and stress medication you will get well soon" */}
             </div>
