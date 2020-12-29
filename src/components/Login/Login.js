@@ -42,8 +42,9 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Blood Donation</h2>
                   <p>
-                    We are Building a Health Centered Community to Sustain and Increase
-                    Reliable Blood Donors. Donated Blood? Join Us, Let others know your kindful Work!
+                    We are Building a Health Centered Community to Sustain and
+                    Increase Reliable Blood Donors. Donated Blood? Join Us, Let
+                    others know your kindful Work!
                   </p>
                 </div>
               </div>
@@ -59,7 +60,9 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Smart BMI</h2>
                   <p>
-                    Calculate your Body Mass Index smartly. Our smart calcultor also suggest your Health status, Preferred weight, Daily intake calorie and much more
+                    Calculate your Body Mass Index smartly. Our smart calcultor
+                    also suggest your Health status, Preferred weight, Daily
+                    intake calorie and much more
                   </p>
                 </div>
               </div>
@@ -79,7 +82,9 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Covid-19 Support</h2>
                   <p>
-                    We are with you in this havoc. Get Latest Covid Stats, Know the Precautions and Use our Symptom checker for Covid for better help.
+                    We are with you in this havoc. Get Latest Covid Stats, Know
+                    the Precautions and Use our Symptom checker for Covid for
+                    better help.
                   </p>
                 </div>
               </div>
@@ -104,6 +109,7 @@ function Login() {
             </div>
           </Link>
 
+          <Link to="/home">
             <div className="services__grid-cell flip__card">
               <div className="flip__card-inner">
                 <div className="flip__card-front">
@@ -113,12 +119,15 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Medi-BoT</h2>
                   <p>
-                    Medi-BoT is here to Assist you. It can answer your first hand queries in no-time with lot of other features.
+                    Medi-BoT is here to Assist you. It can answer your first
+                    hand queries in no-time with lot of other features.
                   </p>
                 </div>
               </div>
             </div>
+          </Link>
 
+          <Link to="/home">
             <div className="services__grid-cell flip__card">
               <div className="flip__card-inner">
                 <div className="flip__card-front">
@@ -135,7 +144,7 @@ function Login() {
                 </div>
               </div>
             </div>
-
+          </Link>
         </div>
         <div className="Join__us_button">
           <a href="#join-us">

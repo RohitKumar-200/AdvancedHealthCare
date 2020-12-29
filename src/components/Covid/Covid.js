@@ -5,7 +5,7 @@ function Covid() {
   return (
     <div className="covid">
       <section id="top">
-        <p className="covid-buttons"> Vaccination Update </p>
+        <p className="covid-buttons"> Covid Stats </p>
         <div className="covid-visualizer">
           <iframe
             src="https://covidvisualizer.com/"
@@ -134,7 +134,7 @@ function Covid() {
         </div>
       </section>
       <section id="sec-2">
-        <h1 style={{fontSize: "48px"}}> Precautions </h1>
+        <h1 style={{ fontSize: "48px" }}> Precautions </h1>
         <div className="precautions-grid">
           <div className="precaution">
             <img

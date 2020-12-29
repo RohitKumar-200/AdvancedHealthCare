@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Chatbot.css";
 import { UserContext } from "../../Context/userContext";
 import ChatBot from "react-simple-chatbot";
@@ -36,30 +36,33 @@ const steps = [
   },
   {
     id: "veryHappy",
-    message: "Message for very happy",
+    message: "Great Me too 😍",
     trigger: "help",
   },
   {
     id: "happy",
-    message: "Message for happy",
+    message:
+      "Hmm, Looks Like You are in good mood. Well I can make it great 😊",
     trigger: "help",
   },
   {
     id: "normal",
-    message: "Message for normal",
+    message:
+      "Ooh, Are You Confused Sir ? Don't Worry I am here to Assist You 👻",
     trigger: "help",
   },
   {
     id: "sad",
-    message: "message for sad",
+    message:
+      "I am sorry to here that 😟 . Well i would suggest to read our random Fun-fact or Visit our Yoga Services or Read the latest feeds. You will feel better.🙂",
     trigger: "help",
   },
   {
     id: "angry",
-    message: "message for angry",
+    message:
+      "😐 Oops, Did i do something wrong....But wait i am a bot i can't do that..🤥.  Well i suggest you to relax your mind, play some games,  watch some movies  and eat a lot of healthy tasty food just like me..😝",
     trigger: "help",
   },
-
   {
     id: "help",
     message: "How can I help you?",
@@ -179,7 +182,11 @@ function BMI({ steps }) {
   return (
     <div>
       Your BMI is{" "}
-      {steps.BMIWeight.value / (steps.BMIHeight.value * steps.BMIHeight.value)}
+      {(
+        (steps.BMIWeight.value /
+          (steps.BMIHeight.value * steps.BMIHeight.value)) *
+        10000
+      ).toFixed(2)}
     </div>
   );
 }
@@ -190,6 +197,8 @@ function FunFact() {
 }
 
 function Chatbot() {
+  const [opened, setOpened] = useState(false);
+  const [key, setKey] = useState(Math.random());
   const history = useHistory();
   const [user] = useContext(UserContext);
 
@@ -215,14 +224,20 @@ function Chatbot() {
       default:
         break;
     }
+    setTimeout(() => {
+      setKey(Math.random());
+      setOpened(false);
+    }, 1000);
   };
 
   return (
     <div className="chatbot">
       <ThemeProvider theme={theme}>
         <ChatBot
+          key={key}
           steps={steps}
           handleEnd={handleEnd}
+          opened={opened}
           headerTitle="Health assistant"
           botAvatar={"/images/ChatbotIcon.svg"}
           userAvatar={user?.pic}
