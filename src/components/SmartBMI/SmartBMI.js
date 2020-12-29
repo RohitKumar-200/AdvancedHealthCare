@@ -56,7 +56,7 @@ function SmartBMI() {
   return (
     <div
       className="smartBMI"
-      style={{backgroundImage: `url(/images/fitness-bg.jpg)`}}
+      style={{ backgroundImage: `url(/images/fitness-bg.jpg)` }}
     >
       <div className="bmi__main_container">
         <div className="main_container_left-col">
@@ -106,7 +106,7 @@ function SmartBMI() {
             <p id="set_weight"></p>
           </div>
           <div className="bmi__calculated" id="body_bmi-2">
-            <p id="body_bmi-2_p" style={{fontSize: `2em`}}></p>
+            <p id="body_bmi-2_p" style={{ fontSize: `2em` }}></p>
             <p id="calculated-bmi-value"></p>
           </div>
           <div className="bmi__body_water" id="body_bmi-3">

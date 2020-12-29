@@ -14,6 +14,7 @@ import Footer from "../Footer/Footer";
 import Covid from "../Covid/Covid";
 import Chatbot from "../Chatbot/Chatbot";
 import Admin from "../Admin/Admin";
+import BMI from "../BMI/BMI";
 
 function App() {
   const [user] = useContext(UserContext);
@@ -30,7 +31,7 @@ function App() {
                 <Home />
               </Route>
               <Route path="/smartBMI">
-                <SmartBMI />
+                <BMI />
               </Route>
               <Route path="/bloodDonation">
                 <BloodDonation />
@@ -49,6 +50,9 @@ function App() {
               </Route>
               <Route path="/admin">
                 <Admin />
+              </Route>
+              <Route path="/bmi">
+                <BMI />
               </Route>
               <Route path="/">
                 {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
