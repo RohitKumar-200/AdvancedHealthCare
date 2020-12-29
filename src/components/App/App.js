@@ -24,35 +24,37 @@ function App() {
         <Header />
         <Chatbot />
         <div className="app__body">
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/smartBMI">
-              <SmartBMI />
-            </Route>
-            <Route path="/bloodDonation">
-              <BloodDonation />
-            </Route>
-            <Route path="/yogaAasans">
-              <Yoga />
-            </Route>
-            <Route path="/profile/:email">
-              <Profile />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/covid-19">
-              <Covid />
-            </Route>
-            <Route path="/admin">
-              <Admin />
-            </Route>
-            <Route path="/">
-              {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
-            </Route>
-          </Switch>
+          <main className="main">
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/smartBMI">
+                <SmartBMI />
+              </Route>
+              <Route path="/bloodDonation">
+                <BloodDonation />
+              </Route>
+              <Route path="/yogaAasans">
+                <Yoga />
+              </Route>
+              <Route path="/profile/:email">
+                <Profile />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/covid-19">
+                <Covid />
+              </Route>
+              <Route path="/admin">
+                <Admin />
+              </Route>
+              <Route path="/">
+                {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
+              </Route>
+            </Switch>
+          </main>
           <Footer />
         </div>
       </Router>

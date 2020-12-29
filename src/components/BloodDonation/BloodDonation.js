@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { storage, db } from "../../firebase";
 import firebase from "firebase";
 import { useSnackbar } from "notistack";
+import Loading from "../Loading/Loading";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,7 +123,7 @@ function BloodDonation() {
   return (
     <>
       {!users ? (
-        ""
+        <Loading />
       ) : (
         <div className="bloodDonation">
           {/* animated background */}

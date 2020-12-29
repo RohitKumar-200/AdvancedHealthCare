@@ -11,6 +11,8 @@ a {
   height: calc(100vh - 60px);
   overflow: auto;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
 }
 .app__body::-webkit-scrollbar {
   width: 4px;
@@ -21,6 +23,9 @@ a {
 .app__body::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: #5ca5ac;
+}
+.main {
+  flex: 1;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
