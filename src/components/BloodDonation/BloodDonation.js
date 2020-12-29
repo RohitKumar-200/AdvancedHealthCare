@@ -266,7 +266,7 @@ function BloodDonation() {
             <div className="right_col_form-map">
               <div className="donate__blood_form">
                 <div className="donate__blood_image">
-                  <h2>Donated? tell everyone</h2>
+                  <h2>Donated? Tell Everyone</h2>
                   <img
                     src={`/images/blood-donate.svg`}
                     alt=""
@@ -351,15 +351,6 @@ function BloodDonation() {
                     </div>
                   </form>
                 </div>
-              </div>
-              <div className="donation__center__box">
-                <h5>Find Donation Centers Near You !</h5>
-                <img
-                  src={`/images/map.svg`}
-                  alt=""
-                  height="30px"
-                  width="30px"
-                />
               </div>
             </div>
           </div>
