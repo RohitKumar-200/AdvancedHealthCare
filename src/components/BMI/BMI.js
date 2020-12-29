@@ -33,7 +33,7 @@ function BMI() {
   };
 
   const getBMIResultMessage = () => {
-    const bmi = (weight / (height * height)) * 1000;
+    const bmi = (weight / (height * height)) * 10000;
     if (bmi <= 16) {
       return "Severely Thin";
     } else if (bmi > 16 && bmi <= 17) {
@@ -50,7 +50,7 @@ function BMI() {
   };
 
   const getRecommendedCalories = () => {
-    const bmi = (weight / (height * height)) * 1000;
+    const bmi = (weight / (height * height)) * 10000;
 
     if (bmi <= 18.5) {
       return "2000-2500 ";
@@ -64,7 +64,7 @@ function BMI() {
   };
 
   const getRecommendedDiet = () => {
-    const bmi = (weight / (height * height)) * 1000;
+    const bmi = (weight / (height * height)) * 10000;
 
     if (bmi <= 18.5) {
       return "eat protein rich food with carbs and good vitamins. Such as eggs, green vegetables, high toned milk,  green dals and have a moderate workout daily, avoid eating junk food..";
@@ -137,7 +137,7 @@ function BMI() {
               </div>
               <div className="bmi__resultData">
                 <div className="bmi__resultBMI">
-                  Your BMI : {((weight / (height * height)) * 1000).toFixed(2)}
+                  Your BMI : {((weight / (height * height)) * 10000).toFixed(2)}
                 </div>
                 <div className="bmi__resultMessage">
                   <p>You are {getBMIResultMessage()}</p>
