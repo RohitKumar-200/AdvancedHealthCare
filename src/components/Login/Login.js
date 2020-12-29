@@ -42,8 +42,8 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Blood Donation</h2>
                   <p>
-                    We are building a Health Centered Community to Sustain and Increase
-                    Reliable Blood Donors. Donated Blood ? Join Us become a Hero !
+                    We are Building a Health Centered Community to Sustain and Increase
+                    Reliable Blood Donors. Donated Blood? Join Us, Let others know your kindful Work!
                   </p>
                 </div>
               </div>
@@ -79,8 +79,7 @@ function Login() {
                 <div className="flip__card-back">
                   <h2>Covid-19 Support</h2>
                   <p>
-                    We are with you in this havoc. Find nearby covid Hotspots
-                    and get latest updates on Covid-19 vaccination
+                    We are with you in this havoc. Get Latest Covid Stats, Know the Precautions and Use our Symptom checker for Covid for better help.
                   </p>
                 </div>
               </div>
