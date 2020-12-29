@@ -40,7 +40,7 @@ function SmartBMI() {
     }
 
     document.getElementById("set_age").innerHTML = age + " Yrs";
-    document.getElementById("set_height").innerHTML = height + " cm";
+    document.getElementById("set_height").innerHTML = height + " m";
     document.getElementById("set_weight").innerHTML = weight + " Kgs";
 
     document.getElementById("body_bmi-2_p").innerHTML = "Your BMI : " + bmi;

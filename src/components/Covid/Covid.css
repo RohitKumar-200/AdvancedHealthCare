@@ -17,10 +17,7 @@
   justify-content: center;
   align-items: center;
 }
-.vaccination-update-box {
-  width: 50%;
-  height: 510px;
-}
+
 .covid-buttons {
   font-size: 1.5em;
   font-family: "Montserrat", sans-serif;
@@ -40,8 +37,7 @@
   background-color: rgb(187, 95, 9);
   cursor: pointer;
 }
-#sec-1,
-#sec-2 {
+#sec-1 {
   height: 100vh;
   width: 100vw;
   scroll-behavior: smooth;
@@ -108,6 +104,14 @@
 }
 .covid-check-list-right .result-text {
   font-size: 2em;
+}
+#sec-2 {
+  width: 100vw;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .precautions-grid {
   display: grid;
