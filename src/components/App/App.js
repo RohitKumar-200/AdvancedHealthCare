@@ -6,7 +6,6 @@ import { UserContext } from "../../Context/userContext";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
-import SmartBMI from "../SmartBMI/SmartBMI";
 import BloodDonation from "../BloodDonation/BloodDonation";
 import Yoga from "../Yoga/Yoga";
 import Profile from "../Profile/Profile";
@@ -50,9 +49,6 @@ function App() {
               </Route>
               <Route path="/admin">
                 <Admin />
-              </Route>
-              <Route path="/bmi">
-                <BMI />
               </Route>
               <Route path="/">
                 {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
